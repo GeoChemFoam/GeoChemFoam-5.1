@@ -1,0 +1,3 @@
+erodeFoam.C
+
+EXE = $(GCFOAM_APPBIN)/erodeFoam

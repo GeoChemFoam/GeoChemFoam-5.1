@@ -1,0 +1,4 @@
+closureBoundaryCondition/closureBoundaryConditionFvPatchVectorField.C
+dispersionFoam.C
+
+EXE = $(GCFOAM_APPBIN)/dispersionFoam
