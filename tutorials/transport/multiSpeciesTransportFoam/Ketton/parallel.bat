@@ -16,14 +16,10 @@ export OMP_NUM_THREADS=1
 # Propagate the cpus-per-task setting from script to srun commands
 export SRUN_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK
 
-# Configure GCF using own installation
-#module load openfoam/com/v2212
-#source /work/ecseaj02/ecseaj02/gavingcf/works/GeoChemFoam-5.0/etc/bashrc
-
 # Configure GCF using Archer2 module
-module load gcfoam/5.0
-source $FOAM_INSTALL_DIR/etc/bashrc
-source $GCFOAM_DIR/ThirdParty/bashrc
+module load other-software
+module load gcfoam/5.1
+source $GCFOAM_DIR/etc/bashrc_archer2
 
 # Configure Python
 module load cray-python
@@ -37,21 +33,15 @@ if [ "$NP" -ne "$((SLURM_TASKS_PER_NODE*SLURM_JOB_NUM_NODES))" ]; then
      echo "However they are $SLURM_TASKS_PER_NODE and $SLURM_JOB_NUM_NODES, respectively"
      exit 1
 fi
-echo -e "Run job_name in parallel on $NP processors"
 
-# runSnappyHexMesh needs time=0:20:0
+export PLATFORM=ARCHER2
+echo -e "Run job_name in parallel on $NP $PLATFORM processors"
+
+# Choose just one of the following parallel scripts.
 ./runSnappyHexMesh.sh 
-
-# runCaseFlow needs time=2:20:0
 #./runCaseFlow.sh 
-
-# processFlow needs time=0:20:0
 #./processFlow.sh 
-
-# runCaseTransport needs time=0:20:0
 #./runCaseTransport.sh 
-
-# processTransport needs time=0:20:0
 #./processTransport.sh 
 
 

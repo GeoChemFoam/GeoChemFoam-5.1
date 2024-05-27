@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=initCaseTransport
+#SBATCH --job-name=serial_jobs
 #SBATCH --time=0:20:0
 #SBATCH --ntasks=1
 #SBATCH --account=ecseaj02
@@ -22,11 +22,8 @@ source $GCFOAM_DIR/etc/bashrc_archer2
 module load cray-python
 source /work/ecseaj02/ecseaj02/gavingcf/myvenv/bin/activate
 
-# Ensure we are in the correct working directory
-cd /work/ecseaj02/ecseaj02/gavingcf/works/GeoChemFoam-5.0/runs/Ketton
-
-./initCaseTransport.sh 
-
-sbatch workflow_step_7.bat
-
+# Choose just one of the following serial scripts
+./createMesh.sh  
+#./initCaseFlow.sh  
+#./initCaseTransport.sh 
 
