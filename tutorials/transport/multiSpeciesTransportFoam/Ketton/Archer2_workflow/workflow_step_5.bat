@@ -26,7 +26,7 @@ module load cray-python
 source /work/ecseaj02/ecseaj02/gavingcf/myvenv/bin/activate
 
 # Ensure we are in the correct working directory
-cd /work/ecseaj02/ecseaj02/gavingcf/works/GeoChemFoam-5.0/runs/Ketton
+cd /work/ecseaj02/ecseaj02/gavingcf/works/GeoChemFoam-5.1/runs/Ketton
 
 # Exit if the total number of tasks do not equal the total number of processor directories.
 export NP="$(find processor* -maxdepth 0 -type d -print| wc -l)"
