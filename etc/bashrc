@@ -42,3 +42,6 @@ alias src='cd $GCFOAM_DIR/src'
 alias app='cd $GCFOAM_DIR/applications'
 alias tut='cd $GCFOAM_DIR/tutorials'
 
+echo "Welcome to GCFoam-5.1!"
+echo "If using the software for academic publication, we require that you cite our repository DOI:10.5281/zenodo.11354428"
+echo "This will help us continue the open-source development of GeoChemFoam"
