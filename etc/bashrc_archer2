@@ -1,0 +1,3 @@
+# .bashrc
+source $FOAM_INSTALL_DIR/etc/bashrc
+source $GCFOAM_DIR/ThirdParty/bashrc
