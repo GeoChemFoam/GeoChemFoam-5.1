@@ -6,7 +6,7 @@
 flowrate=5.2075e-11
 
 #fluid viscosities (m2/s) 
-#Phase 1 is resident phase, phase 2 is injected phase
+#Phase 1 is injected phase, phase 2 is the resident phase
 Visc1=1e-06
 Visc2=7.74e-6
 
